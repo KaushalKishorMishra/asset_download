@@ -178,3 +178,8 @@ dist
 # download file
 assets/*
 ./assets/*
+
+
+# json file
+json//*
+./json/*
