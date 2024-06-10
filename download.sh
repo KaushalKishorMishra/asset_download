@@ -7,6 +7,11 @@ FLARE_IMAGE_DOWNLOAD_DIR="./assets/flares"
 PREVIEW_IMAGE_URL_FILE="./urls/previewImageURLs.txt"
 PREVIEW_IMAGE_DOWNLOAD_DIR="./assets/images"
 
+ICON_IMAGE_URL_FILE="./urls/iconImageURLs.txt"
+ICON_IMAGE_DOWNLOAD_DIR="./assets/icons"
+
+count=0
+
 
 
 _url() {
@@ -32,7 +37,8 @@ _complete(){
     echo "Download Started for $1"
     # Download the videos
     for url in $(cat "$2"); do
-        
+        count=$((count+1))
+        echo "\n Item $count downloading... \n"
         # Remove control characters from the URL
         cleaned_url=$(_url $url)
         
@@ -59,4 +65,8 @@ sleep 5
 _complete $FLARE_IMAGE_DOWNLOAD_DIR $FLARE_IMAGE_URL_FILE
 sleep 5
 _complete $PREVIEW_IMAGE_DOWNLOAD_DIR $PREVIEW_IMAGE_URL_FILE
+sleep 5
+_complete $ICON_IMAGE_DOWNLOAD_DIR $ICON_IMAGE_URL_FILE
+sleep 1
+echo "All downloads completed successfully"
 
