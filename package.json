@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KaushalKishorMishra/puppeteer_app.git"
+    "url": "https://github.com/KaushalKishorMishra/asset_download.git"
   },
   "devDependencies": {
     "@types/bun": "latest"
