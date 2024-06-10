@@ -23,6 +23,6 @@
     "puppeteer": "^22.10.0"
   },
   "scripts": {
-    "start": "bun --watch index.ts"
+    "start": "bun run index.ts && bash download.sh"
   }
 }

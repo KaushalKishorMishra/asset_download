@@ -176,4 +176,5 @@ dist
 
 
 # download file
-./downloads/videos/*
+assets/*
+./assets/*

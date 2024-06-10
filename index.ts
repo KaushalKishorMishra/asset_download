@@ -1,11 +1,27 @@
-import puppeteer from "puppeteer";
+import { default as wishlist } from './wishlist.json'
+import fs from 'fs'
 
-(async () => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto("https://cineflares-lens.netlify.app/login");
+type IVideoURL = string[]
 
-    await page.screenshot({ path: `./ss/${`cineflares.png`}` });
+try {
+    const videoPath: IVideoURL = wishlist.map((item) => {
+        return item.videoPath
+    })
 
-    await browser.close();
-})();
+    const flareImage: IVideoURL = wishlist.map((item) => {
+        return item.flareImage
+    })
+
+    const videoURLsPath = `${__dirname}/urls/videoURLs.txt`
+    const flareImageURLsPath = `${__dirname}/urls/flareImageURLs.txt`
+
+    fs.mkdirSync(`${__dirname}/urls`, { recursive: true })
+
+    fs.writeFileSync(videoURLsPath, videoPath.join('\n'))
+    fs.writeFileSync(flareImageURLsPath, flareImage.join('\n'))
+    
+    console.info('videoURLs.txt and flareImageURLs.txt created successfully with data!')
+}
+catch (err) {
+    console.error(err)
+}
