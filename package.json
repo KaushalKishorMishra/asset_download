@@ -1,28 +1,25 @@
 {
   "name": "cineflares-app",
   "version": "1.0.0",
-  "description": "A simple puppeteer app to get the assets from cineflares website.",
-  "module": "index.ts",
-  "type": "module",
   "author": {
     "name": "Kaushal Kishor Mishra",
     "email": "kaushalkmishra.dev@gmail.com"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/KaushalKishorMishra/asset_download.git"
   },
+  "module": "index.ts",
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "dependencies": {
-    "puppeteer": "^22.10.0"
-  },
+  "description": "A simple puppeteer app to get the assets from cineflares website.",
+  "license": "MIT",
   "scripts": {
     "start": "bun run index.ts && bash download.sh"
-  }
+  },
+  "type": "module"
 }

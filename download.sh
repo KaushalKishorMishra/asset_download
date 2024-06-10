@@ -1,8 +1,13 @@
 VIDEO_URL_FILE="./urls/videoURLs.txt"
 VIDEO_DOWNLOAD_DIR="./assets/videos"
 
-IMAGE_URL_FILE="./urls/flareImageURLs.txt"
-IMAGE_DOWNLOAD_DIR="./assets/images"
+FLARE_IMAGE_URL_FILE="./urls/flareImageURLs.txt"
+FLARE_IMAGE_DOWNLOAD_DIR="./assets/flares"
+
+PREVIEW_IMAGE_URL_FILE="./urls/previewImageURLs.txt"
+PREVIEW_IMAGE_DOWNLOAD_DIR="./assets/images"
+
+
 
 _url() {
     echo "$1" | tr -d '[:cntrl:]'
@@ -50,5 +55,8 @@ _complete(){
 }
 
 _complete $VIDEO_DOWNLOAD_DIR $VIDEO_URL_FILE
-_complete $IMAGE_DOWNLOAD_DIR $IMAGE_URL_FILE
+sleep 5
+_complete $FLARE_IMAGE_DOWNLOAD_DIR $FLARE_IMAGE_URL_FILE
+sleep 5
+_complete $PREVIEW_IMAGE_DOWNLOAD_DIR $PREVIEW_IMAGE_URL_FILE
 
