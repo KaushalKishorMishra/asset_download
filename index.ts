@@ -1,4 +1,3 @@
-import { default as wishlist } from './json/wishlist.json'
 import { default as browse } from './json/browse.json'
 import fs from 'fs'
 
